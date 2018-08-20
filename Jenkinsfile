@@ -13,6 +13,7 @@ node {
     }
     stage('build'){
     
-      sh "ng build"
+      sh "ng test --varbose >tmp"
+      sh "
     }
 }
