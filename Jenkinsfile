@@ -11,13 +11,13 @@ node {
     }
     
     stage('mv'){
-        sh "rm -rf ../dummy"
-        sh "mkdir -p ../dummy"
-        sh "mv * .[^\\.]* ../dummy"
+        sh "mkdir -p ../workdir_home"
+        sh "rm -rf | find -not -name 'node_modules ../workdir_home"
+        sh "mv * .[^\\.]* ../workdir_home"
     }
     
     stage('build'){
-        dir("/var/lib/jenkins/workspace/dummy"){
+        dir("/var/lib/jenkins/workspace/workdir_home"){
         sh "npm install"
         sh "ng test --varbose >tmp"
         sh "if [ `wc -l tmp |awk '{ print \$1 }'` -gt 0 ] ; then cat SIPPAI; else echo SEIKOU ; fi"
