@@ -14,6 +14,6 @@ node {
     stage('build'){
       sh "npm install"
       sh "ng test --varbose >tmp"
-      sh "if [ `wc -l tmp |awk '{ print $1 }'` -gt 0 ] ; then cat SIPPAI; else echo SEIKOU ; fi"
+      sh "if [ `wc -l tmp |awk '{ print \$1 }'` -gt 0 ] ; then cat SIPPAI; else echo SEIKOU ; fi"
     }
 }
