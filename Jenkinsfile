@@ -11,6 +11,7 @@ node {
     }
     
     stage('mv'){
+        sh "rm -rf ../dummy"
         sh "mkdir -p ../dummy"
         sh "mv * .[^\\.]* ../dummy"
     }
