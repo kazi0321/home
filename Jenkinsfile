@@ -12,7 +12,7 @@ node {
     
     stage('mv'){
         sh "mkdir -p ../dummy"
-        sh "cp * .[^\\.]* ../dummy"
+        sh "mv * .[^\\.]* ../dummy"
     }
     
     stage('build'){
