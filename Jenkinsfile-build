@@ -3,7 +3,7 @@ node {
         checkout scm
     }
     stage('build'){
-        dir("/var/lib/jenkins/workspace/dummy"){
+        dir("/var/lib/jenkins/workspace/workdir_home"){
         sh "rm -rf /var/www/html/home/*"
         sh "ng build --base-href /home/ --output-path /var/www/html/home/"
         }
