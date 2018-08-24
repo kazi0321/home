@@ -12,7 +12,7 @@ node {
     
     stage('mv'){
         sh "mkdir -p ../workdir_home"
-        sh "rm -rf `find ../workdir_home/* -not -name 'node_modules/*'`"
+        sh "ls -a ../workdir_home | grep -v -E 'node_modules' |xargs rm -rf"
         sh "mv * .[^\\.]* ../workdir_home"
     }
     
