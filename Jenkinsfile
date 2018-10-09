@@ -23,7 +23,7 @@ node {
     stage('build'){
         dir("/var/lib/jenkins/workspace/workdir_home"){
         sh "npm install"
-        sh "xvfb-run ng e2e > tmp"
+        sh "xvfb-run ng e2e"
         sh "echo \$? > tmp"
         sh "if [`cat tmp | grep 1`] ; then cat SIPPAI; else echo SEIKOU ; fi"
         }
