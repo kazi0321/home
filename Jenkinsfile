@@ -24,7 +24,7 @@ node {
         dir("/var/lib/jenkins/workspace/workdir_home"){
         sh "npm install"
         sh "xvfb-run ng e2e ; echo \$? > tmp | echo skip"
-        sh "if [`cat tmp | grep 1`] ; then cat SIPPAI; else echo SEIKOU ; fi"
+        sh "if `cat tmp | grep 1` ; then cat SIPPAI; else echo SEIKOU ; fi"
         }
     }
 }
